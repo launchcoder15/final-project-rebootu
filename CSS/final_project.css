@@ -1,0 +1,184 @@
+@font-face {
+	font-family: 'Questrial', sans-serif;
+	font-style: normal;
+	src: url(http://fonts.googleapis.com/css?family=Questrial);
+}
+
+@font-face {
+	font-family: 'Open Sans', sans-serif;
+	font-size: normal;
+	src: url(http://fonts.googleapis.com/css?family=Open+Sans);
+}
+
+@font-face {
+	font-family: 'Hind', sans-serif;
+	font-style: normal;
+	src: url(http://fonts.googleapis.com/css?family=Hind:400,600);
+}
+
+body {
+	font-family: 'Questrial', sans-serif;
+	text-align: center;
+	font-size: 1.1em;
+	width: 100%;
+	background: GhostWhite;
+    /*padding: 0.8em 1em 0.8em 1em;*/
+    /*margin-top: 0.3em;*/
+    /*font-size: 62.5%; 16 * .625 = 10, allows other font sizes to be changed more easily */
+}
+
+.jumbotron {
+	background: #339966;
+	min-width: 10em;
+	text-align: left;
+	padding-left: 2em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.h1 {
+    font-family: 'Questrial', sans-serif;
+	margin: 0em;
+	padding: 0em;
+	font-weight: bold;
+}
+
+.h3 {
+	font-family: 'Hind', sans-serif;
+	/*font-family: Gill Sans, Verdana;*/
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	font-weight: bold;
+	margin-top: 0em;
+}
+
+#submit {
+	/*height: 2.5em;
+	line-height: 2.5em;
+	font-size: 1.75em;*/
+	background: GhostWhite;
+	margin-bottom: 0.5em;
+	width: 10em;
+	border: 0em;
+}
+
+#submitted {
+	/*height: 2.5em;
+	line-height: 2.5em;
+	font-size: 1.75em;*/
+	margin-bottom: 0.5em;
+	width: 10em;
+}
+
+#add {
+	height: 2.75em;
+	width: 6em;
+	margin-left: 1em;
+
+}
+
+.todo {
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-align: left;
+	padding-right: 0em;
+}
+
+.listTitle {
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-align: left;
+	padding-right: 0em;	
+}
+
+#title_form {
+	margin-bottom: 1em;
+}
+
+#title {
+	width: 10em;
+	border: 0em;
+	background: GhostWhite;
+}
+
+.listTitles {
+	margin-top: 0em;
+	margin-bottom: 1em;
+	text-align: left;
+	padding-right: 0em;		
+}
+
+#title_forms {
+	margin-bottom: 1em;
+}
+
+#titles {
+	width: 10em;
+}
+
+.list {
+	width: 12em;
+	margin: 0 auto;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border: 0.1em solid rgba(94, 94, 88, .2);
+	text-align: left;
+	float: left;	
+}
+
+.newList {
+	width: 15em;
+	margin: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	border: 0.1em solid rgba(94, 94, 88, .2);
+	text-align: left;
+	float: left;
+}
+
+#other {
+	margin-bottom: 2em;
+}
+
+ul {
+	color: #5E5E58;
+	background: GhostWhite;
+	font-size: 1.7em;
+	text-align: left;
+	width: 70%;
+	padding: 2em;
+	list-style-type: none;
+}
+
+li {
+	text-align: left;
+	background: GhostWhite;
+}
+
+#glyphiconDelete {
+	/*width: 1em;*/
+	float: right;
+}
+
+#glyphiconCheck {
+	margin-left: 0.5em;
+	float: right;
+}
+
+#glyphiconPlus {
+	float: left;
+	height: 2.5em;
+	line-height: 2.5em;
+	margin-left: 2.5em;
+	font-size: 4em;
+	color:#339966;
+}
+
+.btn-group {
+	float: right;
+}
