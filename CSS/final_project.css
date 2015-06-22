@@ -130,15 +130,17 @@ body {
 }
 
 .newList {
-	width: 15em;
-	margin: 1em;
+	/*width: 15em;*/
+	width: 30em;
+	/*margin: 1em;*/
+	margin-left: 15em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 	border: 0.1em solid rgba(94, 94, 88, .2);
 	text-align: left;
-	float: left;
+	/*float: left;*/
 }
 
 #other {
@@ -172,13 +174,31 @@ li {
 
 #glyphiconPlus {
 	float: left;
-	height: 2.5em;
-	line-height: 2.5em;
-	margin-left: 2.5em;
+	height: 3.5em;
+	line-height: 3.5em;
+	/*margin-left: 2.5em;*/
+	margin-left: 12em;
 	font-size: 4em;
-	color:#339966;
+	color: #339966;
 }
 
 .btn-group {
 	float: right;
+
+}
+
+.item {
+	margin-bottom: 1em;
+}
+
+.listItem {
+	margin-bottom: 0.5em;
+}
+
+.title {
+	margin-bottom: 1em;
+}
+
+.placeholder {
+	margin-bottom: 1em;
 }
