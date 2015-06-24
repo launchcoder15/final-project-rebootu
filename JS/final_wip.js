@@ -17,7 +17,6 @@ $(document).ready(function() {
 
 	// 
 	$('.btn-default').click(addTodoItem);
-
 });
 
 
@@ -56,6 +55,17 @@ function makeNewList() {
 	// call addTodoItem function when placeholder is clicked
 	$(placeholder).click(addTodoItem);
 
+	// variable and span for glyphicon remove
+	var glyphiconRemove = $("<span></span>")
+
+	// class for glyphicon remove
+	glyphiconRemove.attr('class', 'glyphicon glyphicon-remove');
+	
+	// place glyphicon before h3
+	$(h3).before(glyphiconRemove);
+
+	// call function to remove entire list when glyphiconRemove is clicked
+	glyphiconRemove.click(removeEntireList);
 }	
 
 function changeListTitle() {
@@ -64,7 +74,7 @@ function changeListTitle() {
 	var form = $("<form></form>");
 	
 	// variable for input of form 
-	var input = $("<input type='text'></input>");
+	var input = $("<input type='text' autofocus='autofocus'></input>");
 	
 	// give input a class
 	input.attr('class', 'title');
@@ -80,7 +90,6 @@ function changeListTitle() {
 
 	// submit new list title and call submitInputedListTitle function
 	form.submit(submitInputedListTitle);
-
 }
 
 function submitInputedListTitle() {
@@ -105,7 +114,7 @@ function addTodoItem() {
 	var listForm = $("<form class='creation-form'></form>");
 	
 	// variable for input of form 
-	var listInput = $("<input type='text'></input>");
+	var listInput = $("<input type='text' autofocus='autofocus'></input>");
 	
 	// give input a class
 	listInput.attr('class', 'item');
@@ -121,8 +130,6 @@ function addTodoItem() {
 	
 	// submit new list item and call submitInputedListItem function
 	listForm.submit(submitInputedListItem);
-
-	// only return listform at the end here
 }
 
 function submitInputedListItem() {
@@ -159,8 +166,9 @@ function submitInputedListItem() {
 	// edit list item when edit button is clicked
 	$('.btn-default').click(editTodoItem);
 
-	$('.item').replaceWith(thisIsTheListItemIJustMade);
+	$(this).replaceWith(placeholder);
 
+	$(placeholder).click(addTodoItem);
 }
 
 function removeTodoItem() {
@@ -170,19 +178,66 @@ function removeTodoItem() {
 }
 
 function editTodoItem() {
-
-	//$(newItem).replaceWith(addTodoItem);
 	
-	// variable for placeholder
-	var placeholder = $("<p class='placeholder'>Click to Add a ToDo...</p>");
+	// variable for form element
+	var listForm = $("<form class='edit-form'></form>");
 	
-	// replace form with placeholder after item submission
-	$(this).parent().parent().replaceWith(addTodoItem);
-
-	// replace input field with placeholder when clicked
+	// variable for input of form 
+	var listInput = $("<input type='text' autofocus='autofocus'></input>");
 	
+	// give input a class
+	listInput.attr('class', 'items');
 
-	// call addTodoItem function when placeholder is clicked to submit more items
-	$(placeholder).click(addTodoItem);	
+	// attach input to form
+	var inputForm = $(listForm).append(listInput);	
+	
+	// hide .placeholder when clicked
+	$(this).hide();
+	
+	// replace .placeholder with form
+	$(this).parent().parent().replaceWith(listForm);
+	
+	// submit new list item and call submitInputedListItem function
+	listForm.submit(submitEditedListItem);	
 }
 
+function submitEditedListItem() {
+	// cancel form action
+	event.preventDefault();
+
+	// submit new item
+	var newItem = $(this).find( ".items" ).val();
+	$(this).find('.items').val('');
+
+	// variable for placeholder element
+	var placeholder = $("<p class='placeholder'>Click to Add a ToDo...</p>");
+
+	// variable name and declare li as jquery object
+	var thisIsTheListItemIJustMade = $("<li class='listItem'>" + newItem + "</li>");
+
+	// append new item to list
+	$(this).parent().append(thisIsTheListItemIJustMade);
+
+	// creat button group
+	var buttonDiv = $("<div class='btn-group btn-group-sm' role='group'></div>");
+	var buttonEdit = $("<button type='button' class='btn btn-default'>Edit</button>");
+	var buttonRemove = $("<button type='button' class='btn btn-danger'>Done</button>");
+
+	// add button group to each list item
+	$(thisIsTheListItemIJustMade).append(buttonDiv);
+	$(buttonDiv).append(buttonEdit);
+	$(buttonDiv).append(buttonRemove);
+
+	// remove list item when remove button is clicked
+	$('.btn-danger').click(removeTodoItem);
+
+	// edit list item when edit button is clicked
+	$('.btn-default').click(editTodoItem);
+
+	$('.items').replaceWith(thisIsTheListItemIJustMade);	
+}
+
+function removeEntireList() {
+
+	$(this).parent().remove();
+}

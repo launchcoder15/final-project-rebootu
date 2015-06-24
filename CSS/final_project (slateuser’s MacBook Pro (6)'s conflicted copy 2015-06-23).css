@@ -48,7 +48,6 @@ body {
 	margin-bottom: 0.5em;
 	width: 10em;
 	border: 0em;
-	font-size: 2em;
 }
 
 .todo {
@@ -57,7 +56,6 @@ body {
 	margin-bottom: 1em;
 	text-align: left;
 	padding-right: 0em;
-	font-size: 2em;
 }
 
 .todo:hover {
@@ -69,7 +67,6 @@ body {
 	margin-bottom: 1em;
 	text-align: left;
 	padding-right: 0em;	
-	font-size: 2em;
 }
 
 .listTitle:hover {
@@ -105,10 +102,9 @@ li {
 
 #glyphiconPlus {
 	float: left;
-	height: 1em;
-	line-height: 1em;
+	height: 3.5em;
+	line-height: 3.5em;
 	margin-left: 13em;
-	margin-top: 1em;
 	font-size: 4em;
 	color: #339966;
 }
@@ -126,7 +122,6 @@ li {
 
 .listItem {
 	margin-bottom: 0.5em;
-	font-size: 1.2em;
 }
 
 .title {
@@ -148,5 +143,3 @@ li {
 	color: #FF4747;
 	cursor: pointer;
 }
-
-@media-screen
